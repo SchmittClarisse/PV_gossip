@@ -20,8 +20,14 @@ class UsersController < ApplicationController
     else
     render "new"
     end
-end
+  end
 
+  # DELETE /posts/1
+  def destroy
+    @user= User.find(params[:id])
+    @user.destroy
+    redirect_to users_path
+  end
 end
 
 

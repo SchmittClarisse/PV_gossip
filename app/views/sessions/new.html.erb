@@ -1,0 +1,47 @@
+<!-- Hero-->
+<div class="pt-3 mt-5 pt-3 text-center">
+
+  <i class="fas fa-highlighter fa-5x"></i>
+  <h1 class="display-5 fw-bold">G<span class='red'>o</span>ssip Pr<span class='red'>o</span>ject</h1>
+
+  <div class="col-lg-6 mx-auto">
+
+    <p class="lead">Tu fais déjà partie de la famille<br>Prouve-le, donne tes identifiants...</p>
+
+  </div>
+</div>
+
+<!-- Connexion formulaire-->
+<div class='container my-5 py-4 '>
+
+  <!-- Message alerte-->
+  <% if flash[:danger] %>
+
+    <br>
+
+    <div class="container p-1 text-center alert  alert-danger" role="alert">
+      <%= flash[:danger] %>
+    </div>
+  <% end %>
+  
+  <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+    <div class='form-group'>
+      <label>Email</label><br>
+      <%= email_field_tag 'email',"", class:'form-control' %>
+    </div>
+
+    <br>
+
+    <div class='form-group'>
+      <label>M<span class='red'>o</span>t de passe</label><br>
+      <%= password_field_tag 'password',"", class:'form-control' %>
+    </div>
+
+    <br>  
+
+    <div class='form-group'>
+      <button type=submit class='btn btn-success'>Se connecter</button>
+    </div>
+  <% end %>
+</div>

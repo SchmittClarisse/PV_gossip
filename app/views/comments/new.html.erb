@@ -1,0 +1,14 @@
+<h1>New comment :</h1>
+
+<%= form_with model: @comment do |form| %>
+
+    <div class="form-group">
+    <label>Content :</label>
+    <%= form.text_area :content, class: "form-control" %>
+    </div>
+
+    <div class="form-group" style="padding-top: 1rem;">
+    <button type="submit" class="btn btn-primary">New comment</button>
+    </div>
+       
+<% end %>

@@ -5,5 +5,10 @@
     <p>content : <%= comment.content %><p>
     <p>
     <a href="<%= comment_path(comment.id) %>" class="btn btn-primary">Show more</a>
+    <a href="<%= comment_path(comment.id) %>" class="btn btn-danger" data-confirm="Are you sure ?" data-method="DELETE">Delete</a>
     </p>
 <% end %>
+
+<p>
+    <a href="<%= new_comment_path %>" class="btn btn-success">New comment</a> 
+</p>

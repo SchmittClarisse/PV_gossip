@@ -51,6 +51,25 @@
       </form>
     </div>
   </div>
+  <!-- Si pas connecter dropdown-->
+  <%if session[:user_id] == nil%>
+    <div class="dropdown">
+      <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Connexion</button>
+      <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href=<%=new_user_path%>>Inscription</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href=<%=new_session_path%>>Connexion</a></li>
+      </ul>
+    </div>
+  <!-- sinon bouton déco-->
+  <%else%>
+
+    <div>
+
+      <a href="<%= session_path(session.id) %>" class="btn btn-outline-danger" data-confirm="êtes-vous sur de vouloir vous déconnecter?" data-method="DELETE">Déconnexion</a>
+          
+    </div>
+  <%end%>
 </nav>
 
   <div class="container" style="padding-top: 2rem; margin-left: 1rem;">
